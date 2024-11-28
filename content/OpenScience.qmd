@@ -1,7 +1,0 @@
----
-title: Open Science
----
-
-This section is optional but we recommend creating this place to point to the [Open Science repository](https://sael-swfsc.github.io/OpenScience/). 
-
-[SAEL Example](https://sael-swfsc.github.io/SAEL-lab-manual/content/OpenScience.html)

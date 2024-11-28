@@ -1,4 +1,36 @@
-Template for development of regional lab manuals as part of the PAM SI
+# NOAA-PAM Research Compendium Template
+**Rename above to your *Project Name***
+
+## Link to Final Report
+**Provide link to final report**
+
+## How to Cite
+**Provide recommended citation**
+
+## Research Compendium
+This repository contains data and code for the ***Project Name***, including 
+
+## Contents
+This directory contains:
+
+-   📁 manuscript: Manuscript for Report
+
+-   📁 content: chapters/sections for online report
+
+-   📁 figs: contains all figures generated for the analysis 
+
+-   📁 docs: Contains rendered versions of the reports 
+
+-   📁 data: Contains raw or raw-derived data
+
+-   📁 output: This can include any modified or intermediate data or data products (data in data folder is ORIGINAL, and data in output may be modified using code stored in R folder.
+
+-   📁 code: scripts that actually do things.
+
+-   📁 supplement: Supplementary files that are not data, script, or components of the manuscript
+
+## Funding
+**Provide statement of funding**
 
 ### Disclaimer
 

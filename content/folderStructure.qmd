@@ -1,0 +1,95 @@
+---
+title: Folder Structure & Content
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+This template provides a set of standard folders for specific types of
+files. We recommend following these standard approaches as consistency
+allows us to follow each other's research workflow.
+
+Here we further explain how to work with this folder structure, with
+tips and tricks to make your work more accessible, reproducible, and to
+help Future You!
+
+## 📁 manuscript 
+
+Manuscript for Report. This may contain one or more versions of the
+manuscript in one or more formats. This folder does **not** serve as the
+output location for rendered versions of the manuscript (those would be
+saved in the ***docs*** folder). Typically, this would be reserved for
+final manuscripts or manuscripts saved in an alternative format or
+manually modified (not direct rendered output).
+
+## 📁 content 
+
+This Research Compendium template is formatted for a HTML (website)
+output, and all chapters/sections for online report should reside in
+this content folder.
+
+## 📁 figs 
+
+Contains all figures generated for the analysis. Your code to create
+figures should be saved in the ***code*** folder, and it should
+automatically save figure output directly to this ***figs*** folder. All
+figure names should be descriptive **not** based on the \# of the figure
+(as this may change).
+
+## 📁 docs 
+
+Contains rendered versions of the reports (if applicable). Note that
+this is different from the ***manuscript*** folder, which would have
+version(s) of the manuscript **not** rendered directly from the
+repository.
+
+::: callout-important
+## Note: Need to check if this is relevant for this particular HTML output format
+:::
+
+## 📁 data 
+
+Contains ORIGINAL raw or raw-derived data. Github is *NOT* an
+appropriate platform for saving large files or large numbers of files.
+You will need to save your raw data (and possible other large data
+products) in an alternative location, such as NCEI,
+[Figshare](https://figshare.com/), or [Zenodo](https://zenodo.org/). We
+recommend that you identify the location of all raw data (WHERE?). As
+this data is intended to be ORIGINAL data, we recommend that modified or
+intermediate data or data products (that are modified by code stored in
+the ***code*** folder) be stored in the ***output*** folder.
+
+::: callout-important
+## Note: Where do we recommend that they identify the location of any data or data products not directly saved to this repository? In the readme? or the index file?
+:::
+
+📁 output
+
+This can include any modified or intermediate data or data products
+(data in data folder is ORIGINAL), and data in output may be modified
+using code stored in ***code*** folder.
+
+📁 code
+
+Scripts that actually do things. If using R, your script should use the
+[here package](https://here.r-lib.org/) rather than setwd() to build
+paths to files and allow for more efficient reproduction of workflow.
+Script should automatically access data in the data folder and save
+output to relevant folders (output, figs).
+
+**\_commonR.R**
+
+We recommend saving commonly used functions in the \_commonR.R file
+(assuming you are using R for your analysis– if not, you can delete this
+file). This is a good place to identify the libraries to load, any
+themes or common formatting requirements, or other common functions.
+Ideally these types of functions are only located in **one** place, so
+that they only need to be changed in one place. You can then source this
+file in other code (reduces redundancy and allows you to modify these
+basic functions in one place instead of throughout your various
+scripts).
+
+📁 supplement
+
+Supplementary files that are not data, script, or components of the
+manuscript.
