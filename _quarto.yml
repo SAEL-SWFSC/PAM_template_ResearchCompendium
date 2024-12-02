@@ -4,8 +4,8 @@ project:
 website: 
   page-navigation: true
   title: "NOAA quarto simple" 
-  site-url: "https://nmfs-ost.github.io/PAM_template_lab_manual/" 
-  repo-url: "https://github.com/nmfs-ost/PAM_template_lab_manual"
+  site-url: "https://sael-swfsc.github.io/PAM_template_ResearchCompendium/" 
+  repo-url: "https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium"
   repo-actions: [edit, source, issue]
   favicon: images/favicon.ico
   
@@ -24,8 +24,8 @@ website:
         href: https://nmfs-ost.github.io/PAM_National_NMFS_Network
         text: "NMFS National Passive Acoustic Monitoring Network"
       - icon: github
-        href: https://github.com/nmfs-ost/PAM_template_lab_manual
-        text: "NMFS PAM SI Lab Manual Template"
+        href: https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium
+        text: "NMFS PAM SI Research Compendium Template"
 
     style: "docked"
     search: true
