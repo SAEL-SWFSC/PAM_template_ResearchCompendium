@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://nmfs-ost.github.io/PAM_National_NMFS_Network" title="NMFS National Passive Acoustic Monitoring Network" class="quarto-navigation-tool px-1" aria-label="NMFS National Passive Acoustic Monitoring Network"><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/nmfs-ost/PAM_template_lab_manual" title="NMFS PAM SI Lab Manual Template" class="quarto-navigation-tool px-1" aria-label="NMFS PAM SI Lab Manual Template"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium" title="NMFS PAM SI Research Compendium Template" class="quarto-navigation-tool px-1" aria-label="NMFS PAM SI Research Compendium Template"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -139,8 +139,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#figs" id="toc-figs" class="nav-link" data-scroll-target="#figs">📁 figs</a></li>
   <li><a href="#docs" id="toc-docs" class="nav-link" data-scroll-target="#docs">📁 docs</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">📁 data</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">📁 output</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">📁 code</a>
+  <ul class="collapse">
+  <li><a href="#commonr.r" id="toc-commonr.r" class="nav-link" data-scroll-target="#commonr.r"><strong>_commonR.R</strong></a></li>
+  </ul></li>
+  <li><a href="#supplement" id="toc-supplement" class="nav-link" data-scroll-target="#supplement">📁 supplement</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nmfs-ost/PAM_template_lab_manual/edit/main/content/folderStructure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/PAM_template_lab_manual/blob/main/content/folderStructure.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/PAM_template_lab_manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/edit/main/content/folderStructure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/content/folderStructure.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -211,13 +217,21 @@ Note: Where do we recommend that they identify the location of any data or data 
 
 </div>
 </div>
-<p>📁 output</p>
+</section>
+<section id="output" class="level2">
+<h2 class="anchored" data-anchor-id="output">📁 output</h2>
 <p>This can include any modified or intermediate data or data products (data in data folder is ORIGINAL), and data in output may be modified using code stored in <strong><em>code</em></strong> folder.</p>
-<p>📁 code</p>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">📁 code</h2>
 <p>Scripts that actually do things. If using R, your script should use the <a href="https://here.r-lib.org/">here package</a> rather than setwd() to build paths to files and allow for more efficient reproduction of workflow. Script should automatically access data in the data folder and save output to relevant folders (output, figs).</p>
-<p><strong>_commonR.R</strong></p>
+<section id="commonr.r" class="level3">
+<h3 class="anchored" data-anchor-id="commonr.r"><strong>_commonR.R</strong></h3>
 <p>We recommend saving commonly used functions in the _commonR.R file (assuming you are using R for your analysis– if not, you can delete this file). This is a good place to identify the libraries to load, any themes or common formatting requirements, or other common functions. Ideally these types of functions are only located in <strong>one</strong> place, so that they only need to be changed in one place. You can then source this file in other code (reduces redundancy and allows you to modify these basic functions in one place instead of throughout your various scripts).</p>
-<p>📁 supplement</p>
+</section>
+</section>
+<section id="supplement" class="level2">
+<h2 class="anchored" data-anchor-id="supplement">📁 supplement</h2>
 <p>Supplementary files that are not data, script, or components of the manuscript.</p>
 
 
@@ -458,7 +472,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/nmfs-ost\.github\.io\/PAM_template_lab_manual\/");
+      var filterRegex = new RegExp("https:\/\/sael-swfsc\.github\.io\/PAM_template_ResearchCompendium\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -802,7 +816,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nmfs-ost/PAM_template_lab_manual/edit/main/content/folderStructure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-ost/PAM_template_lab_manual/blob/main/content/folderStructure.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nmfs-ost/PAM_template_lab_manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/edit/main/content/folderStructure.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/content/folderStructure.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
