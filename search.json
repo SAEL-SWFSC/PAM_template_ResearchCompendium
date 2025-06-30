@@ -128,5 +128,25 @@
     "crumbs": [
       "Folder Structure & Content"
     ]
+  },
+  {
+    "objectID": "content/qmd_withCode.html",
+    "href": "content/qmd_withCode.html",
+    "title": "Adding Exectutable Code",
+    "section": "",
+    "text": "You can add executable code chunks to your pages. See quarto Using R documentation for more information.",
+    "crumbs": [
+      "Adding Executable Code"
+    ]
+  },
+  {
+    "objectID": "content/qmd_withCode.html#package-errors",
+    "href": "content/qmd_withCode.html#package-errors",
+    "title": "Adding Exectutable Code",
+    "section": "Package Errors",
+    "text": "Package Errors\nIf you are encountering errors in your GitHub actions which are not allowing you to publish your pages, you will need to change your workflow.\nOn your GitHub repository, click on the ‘Actions’ tab and look for failed workflows. You can click on the failed workflow to identify where the action failed. Below is an example fail-point where a required package cannot be found\n\n\nEdit Basic Workflow\nOne solution to this error is to include your additional packages in the basic render-and-publish.yml workflow.\n\nOpen your render-and-publish.yml workflow file\nIdentify the following lines (should be around line 17 & 18)\n  - name: Install packages (needed for Rmd)\n    run: Rscript -e 'install.packages(c(\"rmarkdown\", \"knitr\", \"jsonlite\"))'\nAdd packages to the list on the second line\n\nExample:\n    run: Rscript -e 'install.packages(c(\"rmarkdown\", \"knitr\", \"jsonlite\", \"dplyr\"))'\n\nCommit the changes and your workflow should re-run without errors\n\n\n\nUsing renv Workflow\nIf you are still encountering package errors you may need to set up a renv workflow in your R project. This will manage the package dependencies and ensure the proper packages are installed and loaded for rendered GitHub pages.\n\nMake sure you have an R project open for your repository and initialize renv in the project by running the following code renv::init() (you may need to install the renv package). This will create a locale renv folder and a renv.lock file with the packages you loaded\nInstall and load any additional packages, every time you add a new package you will need to add them to your project’s renv.lock file by running the following code renv::snapshot()\nUse .github/workflows/render-and-publish-with-code.yml as your GitHub pages actions workflow\n\nFrom your repository, open .github/workflows/render-and-publish.yml\nComment out the first three lines, save and close that workflow\nFrom your repository, open .github/workflows/render-and-publish-with-code.yml\nUncomment lines 4-6, save and close workflow\n\nSave and push all changes to GitHub, make sure the new renv files are pushed. render-and-publish-with-code.yml should be the only workflow to run when changes are made to the repository",
+    "crumbs": [
+      "Adding Executable Code"
+    ]
   }
 ]

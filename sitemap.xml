@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sael-swfsc.github.io/PAM_template_ResearchCompendium/index.html</loc>
-    <lastmod>2025-06-27T16:22:39.604Z</lastmod>
+    <lastmod>2025-06-30T17:58:00.259Z</lastmod>
   </url>
   <url>
     <loc>https://sael-swfsc.github.io/PAM_template_ResearchCompendium/content/folderStructure.html</loc>
-    <lastmod>2025-06-27T16:22:39.601Z</lastmod>
+    <lastmod>2025-06-30T17:58:00.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sael-swfsc.github.io/PAM_template_ResearchCompendium/content/qmd_withCode.html</loc>
+    <lastmod>2025-06-30T17:58:00.252Z</lastmod>
   </url>
 </urlset>
