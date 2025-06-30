@@ -38,6 +38,8 @@ website:
         text: Home
       - href: content/folderStructure.qmd
         text: "Folder Structure & Content"
+      - href: content/qmd_withCode.qmd
+        text: "Adding Executable Code"
 
 
         

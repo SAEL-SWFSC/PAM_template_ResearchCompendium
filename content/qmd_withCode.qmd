@@ -1,0 +1,114 @@
+---
+title: "Adding Exectutable Code"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+You can add executable code chunks to your pages. See [quarto Using R
+documentation](https://quarto.org/docs/computations/r.html) for more
+information.
+
+# Example Code Chunk
+
+Example from [quarto
+documentation](https://quarto.org/docs/computations/r.html#code-blocks)
+
+## Air Quality
+
+@fig-airquality further explores the impact of temperature on ozone
+level.
+
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+
+#install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+# Adding Packages & Common Errors
+
+If you are working on some code that has additional package
+dependencies, you may need to add them to your [GitHub Actions
+workflow](https://docs.github.com/en/actions) so those code chunks can
+be rendered and executed properly.
+
+This template includes a basic
+[`render-and-publish.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml)
+workflow that should work for most applications.
+
+## Package Errors
+
+If you are encountering errors in your GitHub actions which are not
+allowing you to publish your pages, you will need to change your
+workflow.
+
+On your GitHub repository, click on the 'Actions' tab and look for
+failed workflows. You can click on the failed workflow to identify where
+the action failed. Below is an example fail-point where a required
+package cannot be found
+
+![](images/actions_error.png)
+
+### Edit Basic Workflow
+
+One solution to this error is to include your additional packages in the
+basic
+[`render-and-publish.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml)
+workflow.
+
+1.  Open your
+    [`render-and-publish.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml)
+    workflow file
+
+2.  Identify the following lines (should be around line 17 & 18)
+
+    ```         
+      - name: Install packages (needed for Rmd)
+        run: Rscript -e 'install.packages(c("rmarkdown", "knitr", "jsonlite"))'
+    ```
+
+3.  Add packages to the list on the second line
+
+    -   Example:
+
+        ```         
+            run: Rscript -e 'install.packages(c("rmarkdown", "knitr", "jsonlite", "dplyr"))'
+        ```
+
+4.  Commit the changes and your workflow should re-run without errors
+
+### Using renv Workflow
+
+If you are still encountering package errors you may need to set up a
+`renv` workflow in your R project. This will manage the package
+dependencies and ensure the proper packages are installed and loaded for
+rendered GitHub pages.
+
+1.  Make sure you have an R project open for your repository and
+    initialize `renv` in the project by running the following code
+    `renv::init()` (you may need to install the `renv` package). This
+    will create a locale `renv` folder and a `renv.lock` file with the
+    packages you loaded
+2.  Install and load any additional packages, every time you add a new
+    package you will need to add them to your project's `renv.lock` file
+    by running the following code `renv::snapshot()`
+3.  Use `.github/workflows/render-and-publish-with-code.yml` as your
+    GitHub pages actions workflow
+    -   From your repository, open
+        [`.github/workflows/render-and-publish.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml)
+    -   Comment out the first three lines, save and close that workflow
+    -   From your repository, open
+        [`.github/workflows/render-and-publish-with-code.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml)
+    -   Uncomment lines 4-6, save and close workflow
+4.  Save and push all changes to GitHub, make sure the new `renv` files
+    are pushed.
+    [`render-and-publish-with-code.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml)
+    should be the only workflow to run when changes are made to the
+    repository

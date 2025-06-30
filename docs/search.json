@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "content/qmd_withCode.html",
+    "href": "content/qmd_withCode.html",
+    "title": "Adding Exectutable Code",
+    "section": "",
+    "text": "You can add executable code chunks to your pages. See quarto Using R documentation for more information."
+  },
+  {
+    "objectID": "content/qmd_withCode.html#air-quality",
+    "href": "content/qmd_withCode.html#air-quality",
+    "title": "Adding Exectutable Code",
+    "section": "Air Quality",
+    "text": "Air Quality\nFigure 1 further explores the impact of temperature on ozone level.\n\n#install.packages(\"ggplot2\")\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n\n\n\n\nFigure 1: Temperature and ozone level."
+  },
+  {
+    "objectID": "content/folderStructure.html",
+    "href": "content/folderStructure.html",
+    "title": "Folder Structure & Content",
+    "section": "",
+    "text": "This template provides a set of standard folders for specific types of files. We recommend following these standard approaches as consistency allows us to follow each other’s research workflow.\nHere we further explain how to work with this folder structure, with tips and tricks to make your work more accessible, reproducible, and to help Future You!"
+  },
+  {
+    "objectID": "content/folderStructure.html#manuscript",
+    "href": "content/folderStructure.html#manuscript",
+    "title": "Folder Structure & Content",
+    "section": "📁 manuscript",
+    "text": "📁 manuscript\nManuscript for Report. This may contain one or more versions of the manuscript in one or more formats. This folder does not serve as the output location for rendered versions of the manuscript (those would be saved in the docs folder). Typically, this would be reserved for final manuscripts or manuscripts saved in an alternative format or manually modified (not direct rendered output)."
+  },
+  {
+    "objectID": "content/folderStructure.html#content",
+    "href": "content/folderStructure.html#content",
+    "title": "Folder Structure & Content",
+    "section": "📁 content",
+    "text": "📁 content\nThis Research Compendium template is formatted for a HTML (website) output, and all chapters/sections for online report should reside in this content folder."
+  },
+  {
+    "objectID": "content/folderStructure.html#figs",
+    "href": "content/folderStructure.html#figs",
+    "title": "Folder Structure & Content",
+    "section": "📁 figs",
+    "text": "📁 figs\nContains all figures generated for the analysis. Your code to create figures should be saved in the code folder, and it should automatically save figure output directly to this figs folder. All figure names should be descriptive not based on the # of the figure (as this may change)."
+  },
+  {
+    "objectID": "content/folderStructure.html#docs",
+    "href": "content/folderStructure.html#docs",
+    "title": "Folder Structure & Content",
+    "section": "📁 docs",
+    "text": "📁 docs\nContains rendered versions of the reports (if applicable). Note that this is different from the manuscript folder, which would have version(s) of the manuscript not rendered directly from the repository.\n\n\n\n\n\n\nNote: Need to check if this is relevant for this particular HTML output format"
+  },
+  {
+    "objectID": "content/folderStructure.html#data",
+    "href": "content/folderStructure.html#data",
+    "title": "Folder Structure & Content",
+    "section": "📁 data",
+    "text": "📁 data\nContains ORIGINAL raw or raw-derived data. Github is NOT an appropriate platform for saving large files or large numbers of files. You will need to save your raw data (and possible other large data products) in an alternative location, such as NCEI, Figshare, or Zenodo. We recommend that you identify the location of all raw data (WHERE?). As this data is intended to be ORIGINAL data, we recommend that modified or intermediate data or data products (that are modified by code stored in the code folder) be stored in the output folder.\n\n\n\n\n\n\nNote: Where do we recommend that they identify the location of any data or data products not directly saved to this repository? In the readme? or the index file?"
+  },
+  {
+    "objectID": "content/folderStructure.html#output",
+    "href": "content/folderStructure.html#output",
+    "title": "Folder Structure & Content",
+    "section": "📁 output",
+    "text": "📁 output\nThis can include any modified or intermediate data or data products (data in data folder is ORIGINAL), and data in output may be modified using code stored in code folder."
+  },
+  {
+    "objectID": "content/folderStructure.html#code",
+    "href": "content/folderStructure.html#code",
+    "title": "Folder Structure & Content",
+    "section": "📁 code",
+    "text": "📁 code\nScripts that actually do things. If using R, your script should use the here package rather than setwd() to build paths to files and allow for more efficient reproduction of workflow. Script should automatically access data in the data folder and save output to relevant folders (output, figs).\n\n_commonR.R\nWe recommend saving commonly used functions in the _commonR.R file (assuming you are using R for your analysis– if not, you can delete this file). This is a good place to identify the libraries to load, any themes or common formatting requirements, or other common functions. Ideally these types of functions are only located in one place, so that they only need to be changed in one place. You can then source this file in other code (reduces redundancy and allows you to modify these basic functions in one place instead of throughout your various scripts)."
+  },
+  {
+    "objectID": "content/folderStructure.html#supplement",
+    "href": "content/folderStructure.html#supplement",
+    "title": "Folder Structure & Content",
+    "section": "📁 supplement",
+    "text": "📁 supplement\nSupplementary files that are not data, script, or components of the manuscript."
+  },
+  {
+    "objectID": "content/qmd_withCode.html#package-errors",
+    "href": "content/qmd_withCode.html#package-errors",
+    "title": "Adding Exectutable Code",
+    "section": "Package Errors",
+    "text": "Package Errors\nIf you are encountering errors in your GitHub actions which are not allowing you to publish your pages, you will need to change your workflow.\nOn your GitHub repository, click on the ‘Actions’ tab and look for failed workflows. You can click on the failed workflow to identify where the action failed. Below is an example fail-point where a required package cannot be found\n\n\nEdit Basic Workflow\nOne solution to this error is to include your additional packages in the basic render-and-publish.yml workflow.\n\nOpen your render-and-publish.yml workflow file\nIdentify the following lines (should be around line 17 & 18)\n  - name: Install packages (needed for Rmd)\n    run: Rscript -e 'install.packages(c(\"rmarkdown\", \"knitr\", \"jsonlite\"))'\nAdd packages to the list on the second line\n\nExample:\n    run: Rscript -e 'install.packages(c(\"rmarkdown\", \"knitr\", \"jsonlite\", \"dplyr\"))'\n\nCommit the changes and your workflow should re-run without errors\n\n\n\nUsing renv Workflow\nIf you are still encountering package errors you may need to set up a renv workflow in your R project. This will manage the package dependencies and ensure the proper packages are installed and loaded for rendered GitHub pages.\n\nMake sure you have an R project open for your repository and initialize renv in the project by running the following code renv::init() (you may need to install the renv package). This will create a locale renv folder and a renv.lock file with the packages you loaded\nInstall and load any additional packages, every time you add a new package you will need to add them to your project’s renv.lock file by running the following code renv::snapshot()\nUse .github/workflows/render-and-publish-with-code.yml as your GitHub pages actions workflow\n\nFrom your repository, open .github/workflows/render-and-publish.yml\nComment out the first three lines, save and close that workflow\nFrom your repository, open .github/workflows/render-and-publish-with-code.yml\nUncomment lines 4-6, save and close workflow\n\nSave and push all changes to GitHub, make sure the new renv files are pushed. render-and-publish-with-code.yml should be the only workflow to run when changes are made to the repository"
+  }
+]
