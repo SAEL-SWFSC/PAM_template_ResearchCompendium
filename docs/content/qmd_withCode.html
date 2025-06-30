@@ -187,10 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#example-code-chunk" id="toc-example-code-chunk" class="nav-link active" data-scroll-target="#example-code-chunk">Example Code Chunk</a>
-  <ul class="collapse">
-  <li><a href="#air-quality" id="toc-air-quality" class="nav-link" data-scroll-target="#air-quality">Air Quality</a></li>
-  </ul></li>
+  <li><a href="#example-code-chunk" id="toc-example-code-chunk" class="nav-link active" data-scroll-target="#example-code-chunk">Example Code Chunk</a></li>
   <li><a href="#adding-packages-common-errors" id="toc-adding-packages-common-errors" class="nav-link" data-scroll-target="#adding-packages-common-errors">Adding Packages &amp; Common Errors</a>
   <ul class="collapse">
   <li><a href="#package-errors" id="toc-package-errors" class="nav-link" data-scroll-target="#package-errors">Package Errors</a>
@@ -225,27 +222,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can add executable code chunks to your pages. See <a href="https://quarto.org/docs/computations/r.html">quarto Using R documentation</a> for more information.</p>
 <section id="example-code-chunk" class="level1">
 <h1>Example Code Chunk</h1>
-<p>Example from <a href="https://quarto.org/docs/computations/r.html#code-blocks">quarto documentation</a></p>
-<section id="air-quality" class="level2">
-<h2 class="anchored" data-anchor-id="air-quality">Air Quality</h2>
-<p><a href="#fig-airquality">Figure&nbsp;1</a> further explores the impact of temperature on ozone level.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2")</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some sample data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a basic scatter plot</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Base R Plot"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X values"</span>, <span class="at">ylab =</span> <span class="st">"Y = X squared"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-airquality" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qmd_withCode_files/figure-html/fig-airquality-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Temperature and ozone level.</figcaption><p></p>
-</figure>
+<p><img src="qmd_withCode_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</div>
-</section>
 </section>
 <section id="adding-packages-common-errors" class="level1">
 <h1>Adding Packages &amp; Common Errors</h1>

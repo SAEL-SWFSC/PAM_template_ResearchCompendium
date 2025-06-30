@@ -11,25 +11,16 @@ information.
 
 # Example Code Chunk
 
-Example from [quarto
-documentation](https://quarto.org/docs/computations/r.html#code-blocks)
-
-## Air Quality
-
-@fig-airquality further explores the impact of temperature on ozone
-level.
-
 ```{r}
-#| label: fig-airquality
-#| fig-cap: "Temperature and ozone level."
-#| warning: false
+# Generate some sample data
+x <- 1:10
+y <- x^2
 
-#install.packages("ggplot2")
-library(ggplot2)
+# Create a basic scatter plot
+plot(x, y, type = "b", col = "blue",
+     main = "Base R Plot",
+     xlab = "X values", ylab = "Y = X squared")
 
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
 ```
 
 # Adding Packages & Common Errors
