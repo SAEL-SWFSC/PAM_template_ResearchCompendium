@@ -427,14 +427,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Make sure you have an R project open for your repository and initialize <code>renv</code> in the project by running the following code <code>renv::init()</code> (you may need to install the <code>renv</code> package). This will create a locale <code>renv</code> folder and a <code>renv.lock</code> file with the packages you loaded</li>
 <li>Install and load any additional packages, every time you add a new package you will need to add them to your project’s <code>renv.lock</code> file by running the following code <code>renv::snapshot()</code></li>
-<li>Use <code>.github/workflows/render-and-publish-with-code.yml</code> as your GitHub pages actions workflow
+<li>Use <code>.github/workflows/render-and-publish-with-code.yml</code> as your default GitHub pages actions workflow
 <ul>
-<li>From your repository, open <a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml"><code>.github/workflows/render-and-publish.yml</code></a></li>
-<li>Comment out the first three lines, save and close that workflow</li>
-<li>From your repository, open <a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml"><code>.github/workflows/render-and-publish-with-code.yml</code></a></li>
-<li>Uncomment lines 4-6, save and close workflow</li>
-</ul></li>
+<li>From your repository, rename <a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml"><code>.github/workflows/render-and-publish.yml</code></a> to <code>render-and-publish.yml.disabled</code>. Save file</li>
+<li>From your repository, rename <a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml.disabled">.github/workflows/render-and-publish-with-code.yml.disabled</a> to <code>render-and-publish-with-code.yml</code>. Save file</li>
 <li>Save and push all changes to GitHub, make sure the new <code>renv</code> files are pushed. <a href="https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml"><code>render-and-publish-with-code.yml</code></a> should be the only workflow to run when changes are made to the repository</li>
+</ul></li>
 </ol>
 
 
