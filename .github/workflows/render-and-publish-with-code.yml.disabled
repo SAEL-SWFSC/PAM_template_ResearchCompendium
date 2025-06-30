@@ -1,9 +1,9 @@
 # Use this workflow if you add code to your .qmds that have additional package dependencies
 # to use this workflow, uncomment the following three lines and comment them out on the other render-and-publish.yml file
 
-# on:
-#  push:
-#    branches: main
+ on:
+  push:
+    branches: main
 
 name: Render and Publish w/Code 
 

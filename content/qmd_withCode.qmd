@@ -91,15 +91,15 @@ rendered GitHub pages.
     package you will need to add them to your project's `renv.lock` file
     by running the following code `renv::snapshot()`
 3.  Use `.github/workflows/render-and-publish-with-code.yml` as your
-    GitHub pages actions workflow
-    -   From your repository, open
+    default GitHub pages actions workflow
+    -   From your repository, rename
         [`.github/workflows/render-and-publish.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish.yml)
-    -   Comment out the first three lines, save and close that workflow
-    -   From your repository, open
-        [`.github/workflows/render-and-publish-with-code.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml)
-    -   Uncomment lines 4-6, save and close workflow
-4.  Save and push all changes to GitHub, make sure the new `renv` files
-    are pushed.
-    [`render-and-publish-with-code.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml)
-    should be the only workflow to run when changes are made to the
-    repository
+        to `render-and-publish.yml.disabled`. Save file
+    -   From your repository, rename
+        [.github/workflows/render-and-publish-with-code.yml.disabled](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml.disabled)
+        to `render-and-publish-with-code.yml`. Save file
+    -   Save and push all changes to GitHub, make sure the new `renv`
+        files are pushed.
+        [`render-and-publish-with-code.yml`](https://github.com/SAEL-SWFSC/PAM_template_ResearchCompendium/blob/main/.github/workflows/render-and-publish-with-code.yml)
+        should be the only workflow to run when changes are made to the
+        repository
